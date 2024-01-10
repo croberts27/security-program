@@ -9,11 +9,13 @@ while True:
         print("Success! Hello, {}.".format(name))
         remove = input("Would you like to be removed from the system (y/n)?: ").lower()
         if remove == "y":
-            print(known_users)
             known_users.remove(name)
-            print(known_users)
 
         elif remove == "n":
             print("Great! Have a great day!")
     else:
-        print("Error! Name not recognized.")
+        print("Hmm. I don't think I've met you yet, {}.".format(name))
+        add_user = input("Would you like to be added to the system? (y/n)?: ").lower()
+        if add_user == "y":
+            known_users.append(name)
+            print(known_users)
